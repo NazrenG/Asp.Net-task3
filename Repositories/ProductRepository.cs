@@ -16,7 +16,7 @@ namespace WebApplication4.Repositories
             _context = context;
         }
 
-        
+
         public async Task<List<Product>> GetAllProducts()
         {
             return await _context.Products.ToListAsync();
@@ -37,16 +37,16 @@ namespace WebApplication4.Repositories
 
         async Task IProductRepository.DeleteAsync(Product product)
         {
-             _context.Remove(product);
+            _context.Remove(product);
             await _context.SaveChangesAsync();
         }
 
         public async Task<Product> GetProductById(int id)
         {
-           return await _context.Products.SingleOrDefaultAsync(i => i.Id == id);   
+            return await _context.Products.SingleOrDefaultAsync(i => i.Id == id);
         }
 
-        public async Task UpdateAsync(Product product)
+        async Task IProductRepository.UpdateAsync(Product product)
         {
             _context.Update(product);
             await _context.SaveChangesAsync();

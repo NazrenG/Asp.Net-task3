@@ -76,3 +76,4 @@ C:\Users\user\source\repos\WebApplication4\WebApplication4\obj\Debug\net5.0\WebA
 C:\Users\user\source\repos\WebApplication4\WebApplication4\obj\Debug\net5.0\ref\WebApplication4.dll
 C:\Users\user\source\repos\WebApplication4\WebApplication4\obj\Debug\net5.0\Razor\Views\Home\Add.cshtml.g.cs
 C:\Users\user\source\repos\WebApplication4\WebApplication4\obj\Debug\net5.0\Razor\Views\Home\Update.cshtml.g.cs
+C:\Users\user\source\repos\WebApplication4\WebApplication4\obj\Debug\net5.0\WebApplication4.sourcelink.json

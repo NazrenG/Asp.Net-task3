@@ -16,12 +16,12 @@ namespace WebApplication4.Services
 
         public async Task DeleteAsync(Product product)
         {
-           await _repository.DeleteAsync(product);
+            await _repository.DeleteAsync(product);
         }
 
         public Task<List<Product>> GetAllProductsAsync()
         {
-           return _repository.GetAllProducts();
+            return _repository.GetAllProducts();
         }
 
         public async Task<Product> GetProductById(int id)
@@ -29,7 +29,7 @@ namespace WebApplication4.Services
             return await _repository.GetProductById(id);
         }
 
-        public async Task UpdateAsync(Product product)
+        async Task IProductService.UpdateAsync(Product product)
         {
             await _repository.UpdateAsync(product);
         }

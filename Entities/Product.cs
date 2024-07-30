@@ -9,7 +9,7 @@ namespace WebApplication4.Entities
         public string Name { get; set; }
         [Required(ErrorMessage = "The description field cannot be empty")]
         public string Description { get; set; }
-        [Range(1, 1000, ErrorMessage = "Price must be between 1-1000")]
+        [Range(1, 10000, ErrorMessage = "Price must be between 1-10000")]
         public double Price { get; set; }
 
         [Range(1, 100, ErrorMessage = "Discount must be between 1-100")]

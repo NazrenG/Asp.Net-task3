@@ -80,7 +80,6 @@ namespace WebApplication4.Controllers
                         await System.IO.File.WriteAllBytesAsync(imagePath, imageBytes);
 
                         vm.Product.ImagePath = $"/images/{imageName}";
-                        //vm.Product.Id = new Random().Next(100, 1000);
 
                         await _productService.AddAsync(vm.Product);
                         var products = await _productService.GetAllProductsAsync();
@@ -111,6 +110,7 @@ namespace WebApplication4.Controllers
                     Id = item.Id,
                     Name = item.Name,
                     Price = item.Price,
+                    Description = item.Description,
                     ImagePath = item.ImagePath,
                     Discount = item.Discount
                 }
@@ -128,12 +128,16 @@ namespace WebApplication4.Controllers
                 {
                     item.Name = vm.Product.Name;
                     item.Price = vm.Product.Price;
-                    item.ImagePath = vm.Product.ImagePath;
-                    item.Discount = vm.Product.Discount;
-                    return RedirectToAction("Index");
+                    item.Description = vm.Product.Description;
+                    item.ImagePath =  vm.Product.ImagePath;
+                    item.Discount = vm.Product.Discount;  
+                    
+                    await _productService.UpdateAsync(item);
+              
+                    return RedirectToAction("Index"); 
+                  
                 }
-                await _productService.UpdateAsync(item);
-                return View(item);
+
 
             }
             return View(vm);
